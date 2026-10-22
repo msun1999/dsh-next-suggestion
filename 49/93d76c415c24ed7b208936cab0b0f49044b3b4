@@ -1,0 +1,18 @@
+.gitignore
+  h_f0be47a4e3b7c0 8
+README.md
+  h_f0be47a4e3b7c0 11,13
+docs/demo.html
+  h_f0be47a4e3b7c0 1-147
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4993d76c415c24ed7b208936cab0b0f49044b3b4",
+  "prompts": {},
+  "humans": {
+    "h_f0be47a4e3b7c0": {
+      "author": "马奇 <mm3704811999@163..com>"
+    }
+  }
+}
