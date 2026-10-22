@@ -1,0 +1,3 @@
+- insert:
+    - id: next-suggestion
+      name: 'dsh-next-suggestion'

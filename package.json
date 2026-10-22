@@ -1,0 +1,49 @@
+{
+  "name": "dsh-next-suggestion",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness plugin: predicts the message you are most likely to send next and shows it as ghost text inside the composer. Press Tab to accept.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "cordis",
+    "autocomplete",
+    "inline-suggestion",
+    "composer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msun1999/dsh-next-suggestion.git"
+  },
+  "homepage": "https://github.com/msun1999/dsh-next-suggestion#readme",
+  "bugs": {
+    "url": "https://github.com/msun1999/dsh-next-suggestion/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
