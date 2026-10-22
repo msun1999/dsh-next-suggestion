@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  :root{
+    --page:#1c1c1f;
+    --card:#2c2c2e;
+    --card-line:#3d3d41;
+    --text:#e8e9ea;
+    --dim:#9a9aa1;
+    --bubble:#313135;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--page);}
+  body{
+    font-family:"Microsoft YaHei UI","Microsoft YaHei","Segoe UI",system-ui,sans-serif;
+    color:var(--text);
+    padding:26px 30px 22px;
+    width:1100px;
+  }
+  .row{display:flex;}
+  .row.user{justify-content:flex-end;margin:0 0 26px;}
+  .bubble{
+    background:var(--bubble);
+    color:#ececed;
+    font-size:15px;
+    line-height:1.6;
+    padding:11px 15px;
+    border-radius:14px;
+    max-width:640px;
+  }
+  .assistant{
+    font-size:15px;
+    line-height:1.75;
+    color:#e4e5e6;
+    margin:0 0 8px;
+    max-width:760px;
+  }
+  .assistant .k{
+    background:#33333a;
+    border-radius:5px;
+    padding:1px 6px;
+    font-family:Consolas,monospace;
+    font-size:13px;
+    color:#cfd2d8;
+  }
+  .muted{color:var(--dim);font-size:13px;margin:0 0 26px;}
+
+  /* composer card */
+  .composer{
+    margin-top:18px;
+    background:var(--card);
+    border:1px solid var(--card-line);
+    border-radius:18px;
+    padding:14px 16px 12px;
+  }
+  .inputline{
+    position:relative;
+    height:24px;
+    font-size:14px;
+    line-height:24px;
+    letter-spacing:0;
+  }
+  .ghost{
+    position:absolute;
+    left:0;top:0;
+    color:rgba(249,250,251,0.46);
+    white-space:nowrap;
+  }
+  .caret{
+    display:inline-block;
+    width:1.5px;height:16px;
+    background:#8f9096;
+    vertical-align:-3px;
+    margin-left:1px;
+  }
+  .tabkey{
+    position:absolute;
+    right:0;top:1px;
+    font-size:11px;
+    line-height:18px;
+    color:#a9abb2;
+    border:1px solid #4c4c52;
+    border-bottom-width:2px;
+    border-radius:6px;
+    padding:0 7px;
+    background:#343438;
+  }
+  .toolbar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:14px;
+    color:#b9bbc1;
+    font-size:13px;
+  }
+  .plus{
+    width:26px;height:26px;border-radius:50%;
+    border:1px solid #4d4d53;
+    display:flex;align-items:center;justify-content:center;
+    color:#c8cad0;font-size:16px;line-height:1;
+  }
+  .chip{
+    border:1px solid #4d4d53;border-radius:999px;
+    padding:3px 11px;font-size:12.5px;color:#c2c4ca;
+  }
+  .spacer{flex:1;}
+  .send{
+    width:30px;height:30px;border-radius:50%;
+    background:#4b7bf0;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:14px;
+  }
+  .caption{
+    margin-top:14px;
+    font-size:12.5px;
+    color:#7e8087;
+  }
+</style>
+</head>
+<body>
+  <div class="row user">
+    <div class="bubble">输入框里那个灰色提示能不能直接显示我下一句想说啥？按 Tab 就填进去。</div>
+  </div>
+
+  <p class="assistant">可以。宿主侧在每一轮结束后读最近几轮对话，预测你下一句最可能输入的话并缓存；客户端把它当幽灵文字画在输入框里，<span class="k">Tab</span> 接受，继续打字就自动消失。</p>
+
+  <p class="muted">已完成，用时 12 秒</p>
+
+  <div class="composer">
+    <div class="inputline">
+      <span class="ghost">再把 Tab 的提示图去掉，点击也能接受就行<span class="caret"></span></span>
+      <span class="tabkey">Tab</span>
+    </div>
+    <div class="toolbar">
+      <div class="plus">+</div>
+      <div class="chip">完全权限</div>
+      <div class="spacer"></div>
+      <div style="font-size:12.5px;color:#c2c4ca;">DeepSeek-V4.1 Flash</div>
+      <div class="send">↑</div>
+    </div>
+  </div>
+
+  <div class="caption">灰色文字 = 对下一句话的预测，按 Tab 填入，点击也能接受</div>
+</body>
+</html>
